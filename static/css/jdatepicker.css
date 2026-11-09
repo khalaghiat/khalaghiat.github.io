@@ -1,0 +1,19 @@
+.jdp {
+  position: absolute; z-index: 9999; width: 252px; direction: rtl;
+  background: #fff; color: #1c1f33; border: 1px solid #d5d8e6; border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 21, 71, .18); padding: 8px; font-family: "Vazirmatn", Tahoma, sans-serif;
+}
+.jdp-head { display: flex; align-items: center; justify-content: space-between; background: #0f1547;
+  color: #fcc814; border-radius: 8px; padding: 4px 6px; font-weight: 700; }
+.jdp-head button { background: none; border: 0; color: #fcc814; font-size: 18px; cursor: pointer; width: 28px; }
+.jdp-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-top: 6px; text-align: center; }
+.jdp-grid b { font-size: 12px; color: #6b7088; padding: 2px 0; }
+.jdp-grid button { border: 0; background: none; border-radius: 6px; padding: 5px 0; cursor: pointer;
+  font: inherit; font-size: 13px; color: inherit; }
+.jdp-grid button:hover { background: #fff6d6; }
+.jdp-grid button.fri { color: #b3261e; }
+.jdp-grid button.today { outline: 1px solid #fcc814; }
+.jdp-grid button.sel { background: #0f1547; color: #fff; }
+.jdp-foot { display: flex; gap: 6px; margin-top: 6px; }
+.jdp-foot button { flex: 1; border: 1px solid #d5d8e6; background: #f5f6fa; border-radius: 6px;
+  padding: 3px; cursor: pointer; font: inherit; font-size: 12px; color: #0f1547; }

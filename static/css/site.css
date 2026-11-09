@@ -1,0 +1,142 @@
+/* رنگ‌ها از لوگوی مدرسه: سرمه‌ای و زرد */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --navy: #0f1547;
+  --navy-2: #232b6e;
+  --yellow: #fcc814;
+  --yellow-soft: #fff6d6;
+  --bg: #f5f6fa;
+  --card: #ffffff;
+  --text: #1c1f33;
+  --muted: #6b7088;
+  --line: #e4e6ef;
+  --ok: #1f8a4c;
+  --ok-bg: #e6f5ec;
+  --bad: #b3261e;
+  --bad-bg: #fdecea;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+html { direction: rtl; }
+body {
+  margin: 0;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+}
+a { color: var(--navy-2); }
+
+/* سربرگ */
+.topbar {
+  background: var(--navy);
+  color: #fff;
+  border-bottom: 4px solid var(--yellow);
+}
+.topbar .wrap { display: flex; align-items: center; gap: 14px; padding: 10px 20px; }
+.topbar img { width: 52px; height: 52px; background: #fff; border-radius: 50%; padding: 3px; }
+.topbar .name { font-weight: 800; font-size: 1.1rem; }
+.topbar .sub { font-size: .8rem; opacity: .8; }
+.topbar .spacer { flex: 1; }
+.topbar .toplink { color: #fff; font-size: .85rem; margin-left: 12px; text-decoration: none; opacity: .85; }
+.topbar .toplink:hover { opacity: 1; }
+.topbar form button {
+  background: transparent; color: var(--yellow); border: 1px solid var(--yellow);
+  border-radius: 8px; padding: 4px 14px; font: inherit; cursor: pointer;
+}
+
+.wrap { max-width: 1100px; margin: 0 auto; }
+main.wrap { padding: 24px 20px 60px; }
+
+/* کارت‌ها */
+.grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px 20px; margin-bottom: 18px;
+}
+.card h2 {
+  margin: 0 0 12px; font-size: 1.05rem; color: var(--navy);
+  display: flex; align-items: center; gap: 8px;
+}
+.card h2::before { content: ""; width: 6px; height: 20px; background: var(--yellow); border-radius: 3px; }
+
+.hello { display: flex; flex-wrap: wrap; gap: 6px 28px; align-items: baseline; }
+.hello h1 { margin: 0; font-size: 1.4rem; color: var(--navy); }
+.hello span { color: var(--muted); font-size: .9rem; }
+
+/* خلاصه مالی */
+.money { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.money div { background: var(--bg); border-radius: 10px; padding: 10px 12px; text-align: center; }
+.money small { display: block; color: var(--muted); font-size: .8rem; }
+.money b { font-size: 1.05rem; }
+.money .due { background: var(--bad-bg); color: var(--bad); }
+.money .clear { background: var(--ok-bg); color: var(--ok); }
+
+/* جدول‌ها */
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th, td { padding: 8px 6px; border-bottom: 1px solid var(--line); text-align: right; }
+th { color: var(--muted); font-weight: 600; font-size: .82rem; }
+td.num { white-space: nowrap; }
+
+.subject { margin-bottom: 14px; }
+.subject h3 { margin: 0 0 4px; font-size: .95rem; color: var(--navy-2); }
+.badge {
+  display: inline-block; padding: 1px 10px; border-radius: 20px; font-weight: 700;
+  background: var(--yellow-soft); color: var(--navy);
+}
+.muted { color: var(--muted); font-size: .85rem; }
+
+/* اطلاعیه‌ها */
+.note { border-right: 4px solid var(--line); padding: 6px 12px; margin-bottom: 12px; }
+.note.personal { border-color: var(--yellow); background: var(--yellow-soft); border-radius: 6px; }
+.note.pinned { border-color: var(--navy); }
+.note h3 { margin: 0; font-size: .95rem; }
+.note p { margin: 4px 0; white-space: pre-line; }
+
+/* ورود */
+.login-box { max-width: 380px; margin: 60px auto; text-align: center; }
+.login-box img { width: 140px; }
+.login-box form { text-align: right; }
+.login-box label { display: block; font-size: .9rem; margin-top: 12px; }
+.login-box input {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px;
+  font: inherit; direction: ltr; text-align: left;
+}
+.btn {
+  margin-top: 18px; width: 100%; padding: 11px; border: 0; border-radius: 10px;
+  background: var(--navy); color: #fff; font: inherit; font-weight: 700; cursor: pointer;
+}
+.btn:hover { background: var(--navy-2); }
+.error { background: var(--bad-bg); color: var(--bad); padding: 8px 12px; border-radius: 8px; font-size: .9rem; }
+
+footer { text-align: center; color: var(--muted); font-size: .8rem; padding: 20px; }
+
+@media (max-width: 560px) {
+  .money { grid-template-columns: 1fr; }
+  .topbar .sub { display: none; }
+}
+.ok { background: var(--ok-bg); color: var(--ok); padding: 8px 12px; border-radius: 8px; font-size: .9rem; }
+
+/* صفحه اصلی نسخه نمایشی */
+.hero { text-align: center; padding: 30px 20px 10px; }
+.hero img { width: 170px; }
+.hero h1 { color: var(--navy); margin: 8px 0 0; font-size: 1.7rem; }
+.hero p { color: var(--muted); margin: 4px 0; }
+.levels { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 18px 0; }
+.levels span { background: var(--yellow-soft); color: var(--navy); border-radius: 20px; padding: 4px 16px; font-weight: 700; }
+.tiles { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.tile { display: block; text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--line);
+  border-top: 4px solid var(--yellow); border-radius: var(--radius); padding: 16px 18px; transition: transform .15s; }
+.tile:hover { transform: translateY(-2px); border-top-color: var(--navy); }
+.tile h3 { margin: 0 0 6px; color: var(--navy); }
+.tile p { margin: 0; color: var(--muted); font-size: .9rem; }
+.shot { margin: 0 0 26px; }
+.shot img { width: 100%; border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 16px rgba(15,21,71,.08); }
+.shot figcaption { color: var(--muted); font-size: .9rem; margin-top: 6px; }
